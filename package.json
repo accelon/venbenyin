@@ -1,0 +1,13 @@
+{
+  "name": "venbenyin",
+  "version": "1.0.0",
+  "description": "戒律對修行的重要",
+  "type":"module",
+  "main": "gen-srt.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
