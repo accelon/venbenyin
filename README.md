@@ -2,24 +2,16 @@
 戒律對修行的重要
 
 ## 步驟
-
       執行 ptk js ，得到 venbenyin/*.js  (000.js ~016.js)
 
-     下載 以下影片，放到 venbenyin 目錄，命名為 001.mp4 ~006.mp4
-    
-      https://www.youtube.com/watch?v=8qPFH-qXukI    001.mp4
-      https://www.youtube.com/watch?v=c2dnEAuDh5k    002.mp4
-      https://www.youtube.com/watch?v=uXZGKg9VZug    003.mp4
-      https://www.youtube.com/watch?v=lLUvXwQE6b8    004.mp4
-      https://www.youtube.com/watch?v=qHOUgeng6Nc    005.mp4
-      https://www.youtube.com/watch?v=sFLybjwqutg         006.mp4
-    
       cd accelon22\dist
       mklink/j  venbenyin \2023\venbenyin\venbenyin 
 
      修改  accelon22\dist\config.js ，載入 venbenyin
      
      window.accelon22={preload:"venbenyin"} 
+## youtube VideoId 
+   修改 youtube.js ，srt 到youtube videoId 之對應表
 
 ## 標記說明
 
