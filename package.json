@@ -1,6 +1,6 @@
 {
   "name": "venbenyin",
-  "version": "1.0.0",
+  "version": "1.5.19",
   "description": "戒律對修行的重要",
   "type":"module",
   "main": "gen-srt.js",
