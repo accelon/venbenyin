@@ -1,5 +1,6 @@
 import { filesFromPattern, nodefs, writeChanged, readTextContent } from 'ptk/nodebundle.cjs'
 import { convertSubtitle } from 'ptk/cli/subtitle.js'
+import {YoutubeId} from './youtube.js';
 // need ptk 1.5.15
 await nodefs;
 const infolder = 'srt/';  //輸入
@@ -23,7 +24,8 @@ files.forEach(file => {
     const at = file.indexOf('/');
     const subdir = file.slice(0, at); //子目錄，作為 off檔名
     let fn = file.slice(at + 1);     // srt 檔名
-
+    const youtubeId =YoutubeId[fn.replace(/\.[a-z]+$/,'')];
+    
     if (subdir !== prevsubdir) { //換目錄
         out = fileheader() + out; //加上off檔頭  ak 同bk 
         if (prevsubdir) {
@@ -33,7 +35,8 @@ files.forEach(file => {
         out = '';
     }
     const ck = parseInt(fn.slice(0, 3).replace('-', ''));
-    const content = '^ck' + ck + '【第' + ck + '講】' + '^mpeg<id=' + fn.replace('.srt', '.mp4') + '>\n' + convertSubtitle(srtcontent, fn);
+    const content = '^ck' + ck + '【第' + ck + '講】' + '^mpeg<id=' + fn.replace('.srt', '.mp4') 
+    + (youtubeId?' youtube='+youtubeId+' ':'')+'>\n' + convertSubtitle(srtcontent, fn);
     out += content;
     prevsubdir = subdir;
 })
